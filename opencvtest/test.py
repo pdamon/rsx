@@ -8,6 +8,11 @@ def main():
         if not f.isOpened():
             print("error opening file")
 
+        frame_width = int(f.get(3))
+        frame_height = int(f.get(4))
+
+        output = cv2.VideoWriter("example.avi", cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'), 30,
+                                 (frame_width, frame_height))
         while f.isOpened():
             ret, frame = f.read()
             if ret:
@@ -29,6 +34,7 @@ def main():
                         out.write("x:{} y:{}\n".format(x, y))
 
                     # cv2.drawContours(frame, contours, -1, (0, 0, 255), 3)
+                    output.write(frame)
                     cv2.imshow("With Contours", frame)
 
                     if cv2.waitKey(25) & 0xFF == ord('q'):
@@ -37,6 +43,7 @@ def main():
                 break
 
         f.release()
+        output.release()
 
         cv2.destroyAllWindows()
 
