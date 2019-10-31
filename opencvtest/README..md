@@ -1,0 +1,1 @@
+This is the folder for my OpenCV python test. The results are shown in the example.avi file, which you can download. Test.py uses open cv to draw a red dot over the middle of the ball as it moves in the pong game. It all write the coordinates the the ball in each from to a text file, so they can be tracked over time. 
