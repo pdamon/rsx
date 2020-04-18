@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo "Copying files " /pi/media/*/*.jpg "To current directory"
-cp /pi/media/*/*.jpg .
+MADPATH="/pi/media/*/DCIM/*/*.JPG"
+echo "Copying files " ${MADPATH} "To current directory"
+cp ${MADPATH} .
 
 if [ $? == 0 ]
 then
