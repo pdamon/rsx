@@ -1,3 +1,5 @@
+# run this script with ./copy.sh
+#
 #!/bin/bash
 
 MADPATH="/pi/media/*/DCIM/*/*.JPG"
